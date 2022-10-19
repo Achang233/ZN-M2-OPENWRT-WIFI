@@ -94,6 +94,28 @@ mtd_get_part_size() {
 	done < /proc/mtd
 }
 
+caldata_extract_mmc() {
+	local part=$1
+	local offset=$(($2))
+	local count=$(($3))
+	local mmc_part
+
+	mmc_part=$(find_mmc_part $part)
+	[ -n "$mmc_part" ] || caldata_die "no mmc partition found for partition $part"
+
+	caldata_dd $mmc_part /lib/firmware/$FIRMWARE $count $offset || \
+		caldata_die "failed to extract calibration data from $mmc_part"
+}
+
+mmc_get_mac_binary() {
+	local part_name="$1"
+	local offset="$2"
+	local part
+
+	part=$(find_mmc_part "$part_name")
+	get_mac_binary "$part" "$offset"
+}
+
 macaddr_add() {
 	local mac=$1
 	local val=$2
