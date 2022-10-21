@@ -1,5 +1,12 @@
 # 欢迎来到 适用于 IPQ60xx 的 Openwrt 源码仓库
-基于 [lean 的 IPQ60xx 仓库](https://github.com/coolsnowwolf/openwrt-gl-ax1800)
+基于[ lean 的 IPQ60xx 仓库](https://github.com/coolsnowwolf/openwrt-gl-ax1800)，[zheshifandian 的 gl-axt1800 仓库](https://github.com/zheshifandian/openwrt-ax1800)。    
+云编译仓库[链接](https://github.com/sdf8057/cloudbuild.git)，更新日志[链接](https://github.com/sdf8057/cloudbuild.git)，telegram频道[链接](https://t.me/ipq6000_romshare)。 
+
+Tips:
+1. 推荐使用main分支，其他分支不保证正常使用。  
+2. 没有专门校准文件的设备（除glinet ax1800/axt1800，360v6以外）默认没有WiFi，  
+	如需要WiFi请在Firmware--->ath11k Board-Specific Overrides选择一个不适配的校准文件。
+3. 本源码不保证可以编译任意IPK，IPK功能及编译方面的问题，如非我修改源码所导致请自行解决。  
 
 ## 注意
 
@@ -27,8 +34,8 @@
 3. 下载源代码，更新 feeds 并选择配置
 
    ```bash
-   git clone -b stable --single-branch https://github.com/zheshifandian/openwrt-ax1800
-   cd openwrt-ax1800
+   git clone -b main --single-branch https://github.com/sdf8057/ipq6000.git
+   cd ipq6000
    ./scripts/feeds update -a && ./scripts/feeds install -a
    make menuconfig
    ```
@@ -38,19 +45,17 @@
 
    ```bash
    make download -j8
-   make -j4 tools/compile
-   make -j4 toolchain/compile
-   make -j1 V=99
+   make -j1 V=s
    ```
 
 5. 二次编译：
 
    ```bash
-   cd openwrt-ax1800
-   git fetch -all && git reset --hard origin/stable
+   cd ipq6000
+   git fetch && git reset --hard origin/main
    ./scripts/feeds update -a && ./scripts/feeds install -a
    make defconfig
-   make -j1 V=99
+   make V=s -j$(nproc)
    ```
 
 6. 如果需要重新配置：
@@ -58,8 +63,7 @@
    ```bash
    rm -rf .config
    make menuconfig
-   make -j4 prepare
-   make -j1 V=99
+   make V=s -j$(nproc)
    ```
 
 7. 编译完成后输出路径：bin/targets
