@@ -18,4 +18,4 @@
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 
 # Use another luci branch
-sed -i 's/luci.git;0824/luci.git;1014/g' feeds.conf.default
+sed -i 's/luci.git;0824/luci.git;1024/g' feeds.conf.default
