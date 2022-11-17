@@ -2729,7 +2729,22 @@ msgid "Receiver Antenna"
 msgstr "接收天线"
 
 msgid "Recommended. IP addresses of the WireGuard interface."
-msgstr "推荐，Wire Guard 接口的 IP 地址。"
+msgstr "推荐，WireGuard 接口的 IP 地址。"
+
+msgid "Destination port"
+msgstr "目的端口"
+
+msgid "VXLAN network identifier"
+msgstr "VXLAN 网络标识符"
+
+msgid "ID used to uniquely identify the VXLAN"
+msgstr "用于唯一标识 VXLAN 的 ID"
+
+msgid "Enable rx checksum"
+msgstr "启用 rx 校验和"
+
+msgid "Enable tx checksum"
+msgstr "启用 tx 校验和"
 
 msgid "Reconnect this interface"
 msgstr "重连此接口"
@@ -2754,6 +2769,9 @@ msgstr "中继桥"
 
 msgid "Remote IPv4 address"
 msgstr "远程 IPv4 地址"
+
+msgid "Remote IPv6 address"
+msgstr "远程 IPv6 地址"
 
 msgid "Remote IPv4 address or FQDN"
 msgstr "远程 IPv4 地址或 FQDN"
@@ -3243,6 +3261,10 @@ msgid ""
 msgstr "远程隧道端的 IPv4 地址或完整域名。"
 
 msgid ""
+"The IPv6 address or the fully-qualified domain name of the remote tunnel end."
+msgstr "远程隧道端的 IPv6 地址或完整域名。"
+
+msgid ""
 "The IPv6 prefix assigned to the provider, usually ends with <code>::</code>"
 msgstr "运营商特定的 IPv6 前缀，通常以 <code>::</code> 为结尾"
 
@@ -3304,6 +3326,9 @@ msgstr "IPv6 前缀长度（bit）"
 
 msgid "The local IPv4 address over which the tunnel is created (optional)."
 msgstr "所创建隧道的本地 IPv4 地址（可选）。"
+
+msgid "The local IPv6 address over which the tunnel is created (optional)."
+msgstr "所创建隧道的本地 IPv6 地址（可选）。"
 
 msgid ""
 "The network ports on this device can be combined to several <abbr title="
