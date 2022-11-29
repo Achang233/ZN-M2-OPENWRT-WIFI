@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: gl_mt2500_basic
+name: gl_mt2500_lede
 
 on:
   repository_dispatch:
@@ -21,11 +21,11 @@ on:
 
 env:
   REPO_URL: https://github.com/sdf8057/openwrt-mt2500.git
-  REPO_BRANCH: mt798x
+  REPO_BRANCH: mt7981
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: ./config/gl_mt2500/gl_mt2500_basic.config
-  DIY_P1_SH: ./custom/gl_mt2500/basic/diy-part1.sh
-  DIY_P2_SH: ./custom/gl_mt2500/basic/diy-part2.sh
+  CONFIG_FILE: ./config/gl_mt2500/gl_mt2500_lede.config
+  DIY_P1_SH: ./custom/gl_mt2500/lede/diy-part1.sh
+  DIY_P2_SH: ./custom/gl_mt2500/lede/diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -155,9 +155,9 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "::set-output name=release_tag::gl_mt2500_$(date +"%Y.%m.%d-%H%M")"
+        echo "::set-output name=release_tag::gl_mt2500_lede_$(date +"%Y.%m.%d-%H%M")"
         touch release.txt
-        echo "gl_mt2500_basic firmware" >> release.txt
+        echo "gl_mt2500_lede firmware" >> release.txt
         [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
         [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
         echo "::set-output name=status::success"
