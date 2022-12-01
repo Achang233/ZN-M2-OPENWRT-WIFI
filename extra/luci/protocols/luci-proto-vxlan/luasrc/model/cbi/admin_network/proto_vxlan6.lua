@@ -4,34 +4,34 @@
 
 local map, section, net = ...
 local ifname = net:get_interface():name()
-local peeraddr, ipaddr, port, vid, tunlink
+local peer6addr, ip6addr, vid, tunlink
 local ttl, tos, mtu, rxcsum, txcsum
 
 
 -- general ---------------------------------------------------------------------
 
 
-peeraddr = section:taboption(
+peer6addr = section:taboption(
   "general",
   Value,
-  "peeraddr",
+  "peer6addr",
   translate("Remote IPv6 address"),
   translate("The IPv6 address or the fully-qualified domain name " ..
-            "of the remote end.")
+            "of the remote tunnel end.")
 )
-peeraddr.datatype = "or(hostname,cidr6)"
+peer6addr.datatype = "or(hostname,cidr6)"
 
 
-ipaddr = section:taboption(
+ip6addr = section:taboption(
   "general",
   Value,
-  "ipaddr",
+  "ip6addr",
   translate("Local IPv6 address"),
   translate("The local IPv6 address over which the tunnel is " ..
             "created (optional).")
 )
-ipaddr.datatype = "cidr6"
-ipaddr.optional = true
+ip6addr.datatype = "cidr6"
+ip6addr.optional = true
 
 
 vid = section:taboption(
@@ -55,6 +55,7 @@ tunlink = section:taboption(
 tunlink.template = "cbi/network_netlist"
 tunlink.nocreate = true
 tunlink.unspecified = true
+tunlink.placeholder = ""
 tunlink.optional = true
 
 
@@ -102,10 +103,11 @@ rxcsum = section:taboption(
   "rxcsum",
   translate("Enable rx checksum")
 )
-rxcsum.enabled  = "1"
+rxcsum.enabled = "1"
 rxcsum.disabled = "0"
-rxcsum.default  = rxcsum.enabled
-rxcsum.rmempty  = false
+rxcsum.default = (rxcsum.enabled == "1")
+rxcsum.rmempty = false
+rxcsum.optional = true
 
 
 txcsum = section:taboption(
@@ -114,7 +116,8 @@ txcsum = section:taboption(
   "txcsum",
   translate("Enable tx checksum")
 )
-txcsum.enabled  = "1"
+txcsum.enabled = "1"
 txcsum.disabled = "0"
-txcsum.default  = txcsum.enabled
-txcsum.rmempty  = false
+txcsum.default = (txcsum.enabled == "1")
+txcsum.rmempty = false
+txcsum.optional = true

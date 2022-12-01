@@ -17,7 +17,7 @@ peeraddr = section:taboption(
   "peeraddr",
   translate("Remote IPv4 address"),
   translate("The IPv4 address or the fully-qualified domain name " ..
-            "of the remote end.")
+            "of the remote tunnel end.")
 )
 peeraddr.datatype = "or(hostname,ip4addr)"
 
@@ -66,6 +66,7 @@ tunlink = section:taboption(
 tunlink.template = "cbi/network_netlist"
 tunlink.nocreate = true
 tunlink.unspecified = true
+tunlink.placeholder = ""
 tunlink.optional = true
 
 
@@ -113,10 +114,11 @@ rxcsum = section:taboption(
   "rxcsum",
   translate("Enable rx checksum")
 )
-rxcsum.enabled  = "1"
+rxcsum.enabled = "1"
 rxcsum.disabled = "0"
-rxcsum.default  = rxcsum.enabled
-rxcsum.rmempty  = false
+rxcsum.default = (rxcsum.enabled == "1")
+rxcsum.rmempty = false
+rxcsum.optional = true
 
 
 txcsum = section:taboption(
@@ -125,7 +127,8 @@ txcsum = section:taboption(
   "txcsum",
   translate("Enable tx checksum")
 )
-txcsum.enabled  = "1"
+txcsum.enabled = "1"
 txcsum.disabled = "0"
-txcsum.default  = txcsum.enabled
-txcsum.rmempty  = false
+txcsum.default = (txcsum.enabled == "1")
+txcsum.rmempty = false
+txcsum.optional = true
