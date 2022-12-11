@@ -24,6 +24,7 @@ sub target_config_features(@) {
 		/^squashfs$/ and $ret .= "\tselect USES_SQUASHFS\n";
 		/^jffs2$/ and $ret .= "\tselect USES_JFFS2\n";
 		/^jffs2_nand$/ and $ret .= "\tselect USES_JFFS2_NAND\n";
+		/^emmc$/ and $ret .= "\tselect EMMC_SUPPORT\n";
 		/^ext4$/ and $ret .= "\tselect USES_EXT4\n";
 		/^targz$/ and $ret .= "\tselect USES_TARGZ\n";
 		/^cpiogz$/ and $ret .= "\tselect USES_CPIOGZ\n";
