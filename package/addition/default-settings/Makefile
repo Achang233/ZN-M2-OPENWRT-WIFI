@@ -11,7 +11,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=default-settings
-PKG_VERSION:=1.1
+PKG_VERSION:=2.0
 PKG_RELEASE:=$(COMMITCOUNT)
 
 PKG_LICENSE:=GPL-3.0
