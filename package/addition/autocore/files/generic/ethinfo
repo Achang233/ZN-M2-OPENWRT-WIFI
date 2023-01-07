@@ -12,7 +12,7 @@ for ifname, stat in pairs(util.ubus("network.device", "status")) do
 
 		status = stat.carrier and 1 or 0
 
-		if stat.speed:sub(1, 1) == "-" then
+		if stat.speed:sub(1, 1) == "-" or stat.speed:find("65535") then
 			speed = " - "
 		else
 			speed = stat.speed:sub(1, -2) .. "Mb/s"
