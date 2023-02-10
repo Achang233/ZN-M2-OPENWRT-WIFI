@@ -1,9 +1,25 @@
 ipq6000系列固件分享:  
 
+2023.2.10 切换到WIFI分支，无线使用cmiot_ax18（配置一样）的文件，具体请看
+
+https://github.com/sdf8057/ipq6000/tree/wifi
+
+https://github.com/sdf8057/ipq6000/tree/wifi/package/addition/ath11k-wifi
+
+实测无线可用，空旷区域ZNM2端iperf3-s + iPhone se2 iperf3-c 多线程 5G满千兆、2.4G百兆多点，芯片正常水平，谈不上多好。
+
+coremark跑分1608Mhz频率下跑到20529.330114，比默频高25%左右
+
+NSS负载、CPU负载、温度正常显示，温度略高，对不对（不知道）但是无所谓了
+![image](https://user-images.githubusercontent.com/24839804/218045592-156a23e8-e1f3-404e-a57b-782c1caca75d.png)
+
+DNS插件没上，源里面没有，推荐手动安装https://github.com/sbwml/luci-app-mosdns，上手即用。
+
+其他的OpenClash、SSRPLUS常见的都有。
+
+
 2022.12.17删除了其他机型yml、config文件，着重重点优化ZN-M2-1G
-
 删除了一些我认为没必要预编译的插件
-
 删除了所有DDNS、老掉牙的VPN服务器、VPN终端、我觉得没什么卵用的unblockmusic
 
 无线暂时没有编译上。可以便以上，但是出来的效果太差了，几乎等同于不能用，等优化吧。
