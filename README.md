@@ -9,6 +9,8 @@ https://github.com/sdf8057/ipq6000/tree/wifi/package/addition/ath11k-wifi
 实测无线可用，空旷区域ZNM2端iperf3-s + iPhone se2 iperf3-c 多线程 5G满千兆、2.4G百兆多点，芯片正常水平，谈不上多好。
 
 coremark跑分1608Mhz频率下跑到20529.330114，比默频高25%左右
+![Snipaste_2023-02-10_15-44-45](https://user-images.githubusercontent.com/24839804/218046673-944e67ef-b5df-4fb2-830e-9f38c56c6830.png)
+
 
 NSS负载、CPU负载、温度正常显示，温度略高，对不对（不知道）但是无所谓了
 ![image](https://user-images.githubusercontent.com/24839804/218045592-156a23e8-e1f3-404e-a57b-782c1caca75d.png)
