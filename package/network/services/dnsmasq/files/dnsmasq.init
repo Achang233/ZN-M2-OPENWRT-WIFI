@@ -1078,6 +1078,13 @@ dnsmasq_start()
 	procd_add_jail_mount_rw /var/run/dnsmasq/ $leasefile
 
 	procd_close_instance
+
+	config_get_bool dns_redirect "$cfg" dns_redirect 0
+	config_get dns_port "$cfg" port 53
+	if [ "$dns_redirect" = 1 ]; then
+		iptables -t nat -A PREROUTING -m comment --comment "DNSMASQ" -p udp --dport 53 -j REDIRECT --to-ports $dns_port
+		[ -n "$(command -v ip6tables)" ] && ip6tables -t nat -A PREROUTING -m comment --comment "DNSMASQ" -p udp --dport 53 -j REDIRECT --to-ports $dns_port
+	fi
 }
 
 dnsmasq_stop()
@@ -1093,6 +1100,13 @@ dnsmasq_stop()
 	[ "$localuse" -gt 0 ] && ln -sf "/tmp/resolv.conf.auto" /tmp/resolv.conf
 
 	rm -f ${BASEDHCPSTAMPFILE}.${cfg}.*.dhcp
+}
+
+iptables_clear()
+{
+	config_get dns_port "$cfg" port 53
+	iptables -t nat -D PREROUTING -m comment --comment "DNSMASQ" -p udp --dport 53 -j REDIRECT --to-ports $dns_port 2>"/dev/null"
+	[ -n "$(command -v ip6tables)" ] && ip6tables -t nat -D PREROUTING -m comment --comment "DNSMASQ" -p udp --dport 53 -j REDIRECT --to-ports $dns_port 2>"/dev/null"
 }
 
 add_interface_trigger()
@@ -1147,6 +1161,7 @@ start_service() {
 }
 
 reload_service() {
+	iptables_clear
 	rc_procd start_service "$@"
 	procd_send_signal dnsmasq "$@"
 }
@@ -1173,4 +1188,5 @@ stop_service() {
 	else
 		config_foreach dnsmasq_stop dnsmasq
 	fi
+	iptables_clear
 }
