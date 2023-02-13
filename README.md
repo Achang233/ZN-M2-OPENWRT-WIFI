@@ -1,5 +1,5 @@
 # 欢迎来到 适用于 IPQ60xx 的 Openwrt 源码仓库
-基于[ lean 的 IPQ60xx 仓库](https://github.com/coolsnowwolf/openwrt-gl-ax1800)，[zheshifandian 的 gl-axt1800 仓库](https://github.com/zheshifandian/openwrt-ax1800)。    
+基于[ lean 的 openwrt-gl-ax1800 仓库](https://github.com/coolsnowwolf/openwrt-gl-ax1800)，[zheshifandian 的 openwrt-ax1800 仓库](https://github.com/zheshifandian/openwrt-ax1800)。    
 云编译仓库[链接](https://github.com/sdf8057/cloudbuild.git)，更新日志[链接](https://github.com/sdf8057/cloudbuild.git)，telegram频道[链接](https://t.me/ipq6000_romshare)。 
 
 Tips:
