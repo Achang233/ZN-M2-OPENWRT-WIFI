@@ -1,5 +1,7 @@
 ipq6000系列固件分享:  
 
+2023.2.14 增加passwall、omcproxy（组播IPTV用的）
+
 2023.2.10 切换到WIFI分支，无线使用cmiot_ax18（配置一样）的文件，具体请看
 
 https://github.com/sdf8057/ipq6000/tree/wifi
