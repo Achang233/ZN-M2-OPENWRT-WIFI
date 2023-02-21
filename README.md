@@ -19,6 +19,8 @@ coremark跑分1608Mhz频率下跑到20529.330114，比默频高25%左右
 NSS负载、CPU负载、温度正常显示，温度略高，对不对（不知道）但是无所谓了
 ![image](https://user-images.githubusercontent.com/24839804/218046968-8ceb5617-3bea-47dc-8396-9a631f89aa1a.png)
 ![image](https://user-images.githubusercontent.com/24839804/218047155-271e611a-6b4f-4908-a695-1b7469b96a50.png)
+![image](https://user-images.githubusercontent.com/24839804/220279776-50c33dd0-ef48-4557-9725-efc4d67c7c91.png)
+
 
 DNS插件没上，源里面没有，推荐手动安装https://github.com/sbwml/luci-app-mosdns，上手即用。
 
