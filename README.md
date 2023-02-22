@@ -1,5 +1,7 @@
 ipq6000系列固件分享:  
 
+2023.2.22 流量负载监控vnstat换成statistics
+
 2023.5.15 修复omcproxy没编译上的问题，增加mosdns
 
 2023.2.14 增加passwall、omcproxy（组播IPTV用的）
