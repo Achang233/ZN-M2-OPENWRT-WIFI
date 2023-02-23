@@ -1,5 +1,7 @@
 ipq6000系列固件分享:  
 
+2023.2.23 statistics还是有点问题，luci不能输出图表，再换成wrtbwmon
+
 2023.2.22 流量负载监控vnstat换成statistics
 
 2023.5.15 修复omcproxy没编译上的问题，增加mosdns
@@ -22,6 +24,8 @@ NSS负载、CPU负载、温度正常显示，温度略高，对不对（不知�
 ![image](https://user-images.githubusercontent.com/24839804/218046968-8ceb5617-3bea-47dc-8396-9a631f89aa1a.png)
 ![image](https://user-images.githubusercontent.com/24839804/218047155-271e611a-6b4f-4908-a695-1b7469b96a50.png)
 ![image](https://user-images.githubusercontent.com/24839804/220279776-50c33dd0-ef48-4557-9725-efc4d67c7c91.png)
+![image](https://user-images.githubusercontent.com/24839804/220858423-bc9b4be2-79bc-405c-8559-353046bc67f0.png)
+
 
 
 DNS插件没上，源里面没有，推荐手动安装https://github.com/sbwml/luci-app-mosdns，上手即用。
