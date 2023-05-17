@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: cmiot_ax18_basic
+name: cmiot_ax18_plus_test
 
 on:
   repository_dispatch:
@@ -23,7 +23,7 @@ env:
   REPO_URL: https://github.com/sdf8057/ipq6000.git
   REPO_BRANCH: main
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: ./config/cmiot_ax18/cmiot_ax18_basic.config
+  CONFIG_FILE: ./config/cmiot_ax18/cmiot_ax18_plus.config
   DIY_P1_SH: ./custom/cmiot_ax18/basic/diy-part1.sh
   DIY_P2_SH: ./custom/cmiot_ax18/basic/diy-part2.sh
   UPLOAD_BIN_DIR: false
