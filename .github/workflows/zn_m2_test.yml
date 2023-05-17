@@ -155,9 +155,9 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "::set-output name=release_tag::cmiot_ax18_plus_$(date +"%Y.%m.%d-%H%M")"
+        echo "::set-output name=release_tag::zn_m2_test_$(date +"%Y.%m.%d-%H%M")"
         touch release.txt
-        echo "cmiot_ax18_plus firmware" >> release.txt
+        echo "zn_m2_test" >> release.txt
         [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
         [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
         echo "::set-output name=status::success"
