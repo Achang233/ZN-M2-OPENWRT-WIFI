@@ -92,6 +92,7 @@ jobs:
         cd openwrt
         make defconfig
         make download -j8
+        wget -p /dl https://sources.openwrt.org/ipt2socks-1.1.3.tar.gz
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
