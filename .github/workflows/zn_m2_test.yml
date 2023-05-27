@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/openwrt-gl-ax1800.git
+  REPO_URL: https://github.com/Zyilin98/openwrt-gl-ax1800.git
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: ./config/cmiot_ax18/zn_m2_test.config
