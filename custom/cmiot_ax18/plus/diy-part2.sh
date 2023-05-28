@@ -15,4 +15,4 @@
 
 # Modify version
 #sed -i 's/R22.11.11/V22.11.11/g' package/addition/default-settings/files/99-default-settings
-
+git clone https://github.com/sirpdboy/luci-app-netdata package/luci-app-netdata
