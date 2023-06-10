@@ -4,7 +4,7 @@
 
 [大雕的openwrt-gl-ax1800分支](https://github.com/coolsnowwolf/openwrt-gl-ax1800)
 
-[immortalwrt分支]([https://github.com/coolsnowwolf/openwrt-gl-ax1800](https://github.com/immortalwrt/immortalwrt))
+[immortalwrt分支](https://github.com/immortalwrt/immortalwrt)
 
 两个分支，以前sdf8057的分支支持wifi 目前wifi分支删除 正在尝试大雕原始分支
 
