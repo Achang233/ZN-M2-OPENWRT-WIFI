@@ -1,0 +1,23 @@
+CONFIG_TARGET_ipq60xx=y
+CONFIG_TARGET_ipq60xx_generic=y
+CONFIG_TARGET_ipq60xx_generic_DEVICE_zn_m2=y
+CONFIG_PACKAGE_ath11k-wifi-cmiot_ax18=y
+#编译开
+CONFIG_DEVEL=y
+CONFIG_PACKAGE_luci-app-firewall=y
+CONFIG_PACKAGE_kmod-macvlan=y
+CONFIG_PACKAGE_luci-app-switch=y
+# ipv6
+CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+CONFIG_PACKAGE_ipv6helper=y
+CONFIG_PACKAGE_kmod-qca-nss-crypto=y
+# CONFIG_PACKAGE_luci-app-diskman_INCLUDE_btrfs_progs is not set
+# CONFIG_PACKAGE_luci-app-diskman_INCLUDE_lsblk is not set
+# CONFIG_PACKAGE_luci-lib-ipkg is not set
+# luci-app
+CONFIG_PACKAGE_luci-compat=y
+CONFIG_PACKAGE_luci-app-ramfree=y
+CONFIG_PACKAGE_luci-app-upnp=y
+CONFIG_PACKAGE_openssh-sftp-server=y
+CONFIG_PACKAGE_luci-app-cpufreq=y
+CONFIG_PACKAGE_wpad-wolfssl=y
