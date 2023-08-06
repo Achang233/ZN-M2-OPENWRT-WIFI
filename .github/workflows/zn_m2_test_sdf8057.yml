@@ -15,8 +15,8 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/sdf8057/ipq6000.git
-  REPO_BRANCH: main
+  REPO_URL: https://github.com/Achang233/ZN-M2-OPENWRT-WIFI.git
+  REPO_BRANCH: wifi
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: ./config/cmiot_ax18/zn_m2_test-sdf8057.config
   DIY_P1_SH: ./custom/cmiot_ax18/sdf8057/diy-part1.sh
@@ -96,7 +96,7 @@ jobs:
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
-        make V=s -j$(nproc) || make -j2 || make -j1 V=s
+        make V=s -j$(nproc) || make -j1 V=s
         echo "status=success" >> $GITHUB_OUTPUT
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
         [ -s DEVICE_NAME ] && echo "DEVICE_NAME=_$(cat DEVICE_NAME)" >> $GITHUB_ENV
