@@ -8,8 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: ZN_M2_MIX
-
+name: llvm_test
 on:
   repository_dispatch:
   workflow_dispatch:
