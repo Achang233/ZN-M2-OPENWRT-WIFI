@@ -30,13 +30,15 @@ env:
 jobs:
   build:
     runs-on: ubuntu-22.04
+    
+    strategy:
+      matrix:
+        compiler: [clang, clang++]
 
     steps:
     - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Checkout
-      uses: actions/checkout@main
     - name: Init build dependencies
       env:
         DEBIAN_FRONTEND: noninteractive
@@ -56,6 +58,10 @@ jobs:
         df -h
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
+
+    - name: Set C/C++ compiler path
+      run: echo "CC=${{ matrix.compiler }}" "CXX=${{ matrix.compiler }}" >> $GITHUB_ENV
+      
     - name: Clone source code
       working-directory: /workdir
       run: |
