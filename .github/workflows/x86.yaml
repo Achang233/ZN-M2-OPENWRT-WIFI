@@ -18,9 +18,9 @@ env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt.git
   REPO_BRANCH: openwrt-23.05
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: ./config/cmiot_ax18/zn_m2_test-sdf8057.config
-  DIY_P1_SH: ./custom/cmiot_ax18/sdf8057/diy-part1.sh
-  DIY_P2_SH: ./custom/cmiot_ax18/sdf8057/diy-part1.sh
+  CONFIG_FILE: ./config/x86/x86.config
+  DIY_P1_SH: ./custom/x86/diy-part1.sh
+  DIY_P2_SH: ./custom/x86/diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -30,7 +30,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
     - name: Checkout
@@ -151,9 +151,9 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "release_tag=zn_m2_test_sdf8057$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
+        echo "release_tag=x86_test$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
         touch release.txt
-        echo "zn_m2_test_sdf8057" >> release.txt
+        echo "x86_test" >> release.txt
         [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
         [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
         echo "status=success" >> $GITHUB_OUTPUT
