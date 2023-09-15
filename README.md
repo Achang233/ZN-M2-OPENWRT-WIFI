@@ -6,6 +6,10 @@
 
 [immortalwrt分支](https://github.com/immortalwrt/immortalwrt)
 
+
+### ⚠⚠警告⚠⚠
+####  近期在尝试维护，且维护是十分激进的 建议尽量不要同步提交 可能会导致无法成功编译
+
 简单总结版本：
 现状：sdf佬删了wifi分支，不能编译支持wifi的固件，lean源码长期不更新，且wifi支持并不是很完美。
 我通过翻找fork列表找到了原来的WiFi分支，稍微拆东墙补西墙之后能够正常出包 本人对openwrt项目没有太大了解 会尽可能的维护这个分支。
