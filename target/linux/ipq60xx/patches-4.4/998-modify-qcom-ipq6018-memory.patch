@@ -1,0 +1,24 @@
+--- a/arch/arm64/boot/dts/qcom/qcom-ipq6018-memory.dtsi
++++ b/arch/arm64/boot/dts/qcom/qcom-ipq6018-memory.dtsi
+@@ -233,17 +233,17 @@
+ 
+ 		q6_region: wcnss@4ab00000 {
+ 			no-map;
+-			reg = <0x0 0x4ab00000 0x0 0x03700000>;
++			reg = <0x0 0x4ab00000 0x0 0x00400000>;
+ 		};
+ 
+ 		q6_etr_region: q6_etr_dump@1 {
+ 			no-map;
+-			reg = <0x0 0x4E200000 0x0 0x100000>;
++			reg = <0x0 0x4af00000 0x0 0x100000>;
+ 		};
+ 
+-		m3_dump@4e300000 {
++		m3_dump@4b000000 {
+ 			no-map;
+-			reg = <0x0 0x4e300000 0x0 0x100000>;
++			reg = <0x0 0x4b000000 0x0 0x100000>;
+ 		};
+ 
+ 		rpm_msg_ram: rpm_msg_ram@0x60000 {

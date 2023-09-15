@@ -303,3 +303,15 @@
 &qpic_bam {
 	status = "ok";
 };
+
+&qusb_phy_0 {
+	status = "ok";
+};
+
+&ssphy_0 {
+	status = "ok";
+};
+
+&usb3 {
+	status = "ok";
+};

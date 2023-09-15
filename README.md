@@ -1,12 +1,4 @@
-# 欢迎来到 适用于 IPQ60xx 的 Openwrt 源码仓库
-基于[ lean 的 openwrt-gl-ax1800 仓库](https://github.com/coolsnowwolf/openwrt-gl-ax1800)，[zheshifandian 的 openwrt-ax1800 仓库](https://github.com/zheshifandian/openwrt-ax1800)。    
-云编译仓库[链接](https://github.com/sdf8057/cloudbuild.git)，更新日志[链接](https://github.com/sdf8057/cloudbuild.git)，telegram频道[链接](https://t.me/ipq6000_romshare)。 
-
-Tips:
-1. 推荐使用main分支，其他分支不保证正常使用。  
-2. 没有专门校准文件的设备（除glinet ax1800/axt1800，360v6以外）默认没有WiFi，  
-	如需要WiFi请在Firmware--->ath11k Board-Specific Overrides选择一个不适配的校准文件。
-3. 本源码不保证可以编译任意IPK，IPK功能及编译方面的问题，如非我修改源码所导致请自行解决。  
+# 适用于 IPQ6000 设备的 OpenWrt 源码仓库
 
 ## 注意
 
@@ -67,7 +59,3 @@ Tips:
    ```
 
 7. 编译完成后输出路径：bin/targets
-
-本套代码不保证所有IPK可以编译成功。
-
-你可以自由使用，但源码编译二次发布请注明 [lean 的  GitHub 仓库](https://github.com/coolsnowwolf/lede)
