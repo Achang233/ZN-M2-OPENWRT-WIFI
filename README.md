@@ -1,3 +1,4 @@
+# 该项目已被放弃
 兆能M2/和目AX18 openwrt云编译项目 目前在实验
 
 [sdf8057佬的ipq6000分支](https://github.com/sdf8057/ipq6000)
